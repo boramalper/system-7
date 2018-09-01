@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files>
+  <file name="00_coverscreenshot.jpg" source="original">
+    <mtime>1491281464</mtime>
+    <size>52120</size>
+    <format>JPEG</format>
+    <rotation>0</rotation>
+    <md5>7d245fb52df6210d6cdfb9b167d46cb3</md5>
+    <crc32>fd17335d</crc32>
+    <sha1>22bc557b1b0a37a00bfadad1ee2d2e4411f7f2ca</sha1>
+  </file>
+  <file name="00_coverscreenshot_thumb.jpg" source="derivative">
+    <format>JPEG Thumb</format>
+    <original>00_coverscreenshot.jpg</original>
+    <mtime>1491281490</mtime>
+    <size>3068</size>
+    <md5>cd861d5b5e77c8447a8661fdd54b70e2</md5>
+    <crc32>9a2841e9</crc32>
+    <sha1>6ae3d31cc772641a74458e5071435b87cf7b0998</sha1>
+  </file>
+  <file name="_screenshot.gif" source="original">
+    <mtime>1491281475</mtime>
+    <size>64231</size>
+    <format>Emulator Screenshot</format>
+    <md5>a93f87da33f88775be5196285159fb94</md5>
+    <crc32>233eef7b</crc32>
+    <sha1>6eb6b1c18f890f3f54a353f087403abcb5482f7b</sha1>
+  </file>
+  <file name="hd1.img" source="original">
+    <mtime>1491279141</mtime>
+    <size>21411840</size>
+    <md5>7f9ae888ff116dbf388a5a265315525e</md5>
+    <crc32>7e0b2118</crc32>
+    <sha1>2f5ac4d2364b24f64ac56374cb83ab7e869d301c</sha1>
+    <format>ISO Image</format>
+  </file>
+  <file name="hd2.img" source="original">
+    <mtime>1491279155</mtime>
+    <size>21411840</size>
+    <md5>5a0704eb58dfb7ec5c42479c14f1435a</md5>
+    <crc32>dc864bc8</crc32>
+    <sha1>156f3642a3461bd9a31db9bfc543cde52ee884b1</sha1>
+    <format>ISO Image</format>
+  </file>
+  <file name="mac_MacOS_7.0.1_compilation.gif" source="original">
+    <mtime>1491281471</mtime>
+    <size>4301</size>
+    <format>Animated GIF</format>
+    <md5>4ce478db0d501bc77205a747c7bf9dec</md5>
+    <crc32>58bb3164</crc32>
+    <sha1>fada40476b84bad63b3c837b952384fcc0afc712</sha1>
+  </file>
+  <file name="mac_MacOS_7.0.1_compilation_archive.torrent" source="metadata">
+    <btih>b8928d4e5b9e875512ec7da2a66e7787afa66853</btih>
+    <mtime>1523311943</mtime>
+    <size>4610</size>
+    <md5>12103f3d7ddc76d2a81b39796b91a346</md5>
+    <crc32>6013a406</crc32>
+    <sha1>f3ca17864e582dba60888dc2c217d30a20ec25de</sha1>
+    <format>Archive BitTorrent</format>
+  </file>
+  <file name="mac_MacOS_7.0.1_compilation_files.xml" source="original">
+    <format>Metadata</format>
+    <md5>e36da0f0f79475f7212db0af45376dc2</md5>
+  </file>
+  <file name="mac_MacOS_7.0.1_compilation_meta.sqlite" source="original">
+    <mtime>1491281477</mtime>
+    <size>14336</size>
+    <format>Metadata</format>
+    <md5>e232ddfdc5502ed04518ea9183b10697</md5>
+    <crc32>60e19f70</crc32>
+    <sha1>c75e69f8c5fb213a4fa1b94ef7f9b601dd742968</sha1>
+  </file>
+  <file name="mac_MacOS_7.0.1_compilation_meta.xml" source="original">
+    <mtime>1491284996</mtime>
+    <size>4295</size>
+    <format>Metadata</format>
+    <md5>46af4d68ad5d443ef487fb7aac42e85a</md5>
+    <crc32>bb798be6</crc32>
+    <sha1>fb689e72ea95333d787ea13dc2d7e8bc776fcda1</sha1>
+  </file>
+  <file name="mac_MacOS_7.0.1_compilation_reviews.xml" source="original">
+    <mtime>1523311942</mtime>
+    <size>2195</size>
+    <format>Metadata</format>
+    <md5>84d46daaf93a535d24e4664f0a429ca2</md5>
+    <crc32>81d6c029</crc32>
+    <sha1>606fcb53270afc7c1d21baf01aa6bad542b4679b</sha1>
+  </file>
+  <file name="screenshot_00.jpg" source="original">
+    <mtime>1491281467</mtime>
+    <size>52120</size>
+    <md5>7d245fb52df6210d6cdfb9b167d46cb3</md5>
+    <crc32>fd17335d</crc32>
+    <sha1>22bc557b1b0a37a00bfadad1ee2d2e4411f7f2ca</sha1>
+    <format>JPEG</format>
+    <rotation>0</rotation>
+  </file>
+  <file name="screenshot_00_thumb.jpg" source="derivative">
+    <format>JPEG Thumb</format>
+    <original>screenshot_00.jpg</original>
+    <mtime>1491281491</mtime>
+    <size>3068</size>
+    <md5>cd861d5b5e77c8447a8661fdd54b70e2</md5>
+    <crc32>9a2841e9</crc32>
+    <sha1>6ae3d31cc772641a74458e5071435b87cf7b0998</sha1>
+  </file>
+</files>
