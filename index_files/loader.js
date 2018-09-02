@@ -197,7 +197,7 @@ var Module = null;
                                                               cfgr.extraArgs(modulecfg.extra_args));
                                            }
 
-                                           splash.setTitle("Downloading game data...");
+                                           splash.setTitle("Downloading data...");
                                            return Promise.all(get_files(cfgr, metadata, modulecfg, filelist));
                                          },
                                          function () {
@@ -250,7 +250,7 @@ var Module = null;
        var mounts = Object.keys(drives),
            len = mounts.length;
        mounts.forEach(function (drive, i) {
-                        var title = "Game File ("+ (i+1) +" of "+ len +")",
+                        var title = "Hard Disk ("+ (i+1) +" of "+ len +")",
                             filename = drives[drive],
                             url = (filename.includes("/")) ? get_zip_url(filename)
                                                            : get_zip_url(filename, get_item_name(game));
@@ -295,7 +295,7 @@ var Module = null;
        var game_files = Object.keys(game_files_counter),
            len = game_files.length;
        game_files.forEach(function (filename, i) {
-                            var title = "Game File ("+ (i+1) +" of "+ len +")",
+                            var title = "Hard Disk ("+ (i+1) +" of "+ len +")",
                                 url = (filename.includes("/")) ? get_zip_url(filename)
                                                                : get_zip_url(filename, get_item_name(game));
                             files.push(cfgr.mountFile('/'+ filename,
@@ -328,7 +328,7 @@ var Module = null;
            game_files = files_with_ext_from_filelist(filelist, meta.emulator_ext);
        game_files.forEach(function (file, i) {
                             if (file) {
-                              var title = "Game File ("+ (i+1) +" of "+ game_files.length +")",
+                              var title = "Hard Disk ("+ (i+1) +" of "+ game_files.length +")",
                                   url = (file.name.includes("/")) ? get_zip_url(file.name)
                                                                   : get_zip_url(file.name, get_item_name(game));
                               files.push(cfgr.mountFile('/'+ file.name,
@@ -370,7 +370,7 @@ var Module = null;
        var game_files = Object.keys(game_files_counter),
            len = game_files.length;
        game_files.forEach(function (filename, i) {
-                            var title = "Game File ("+ (i+1) +" of "+ len +")",
+                            var title = "Hard Disk ("+ (i+1) +" of "+ len +")",
                                 ext = filename.match(/\.([^.]*)$/)[1],
                                 url = (filename.includes("/")) ? get_zip_url(filename)
                                                                : get_zip_url(filename, get_item_name(game));
@@ -1158,7 +1158,7 @@ var Module = null;
                       if (splash.failed_loading) {
                         return;
                       }
-                      splash.setTitle("Failed to download game data!");
+                      splash.setTitle("Failed to download data!");
                       splash.failed_loading = true;
                     })
               .then(function () {
@@ -1201,7 +1201,7 @@ var Module = null;
                       }
 
                       if (game_data.emulatorJS) {
-                        splash.setTitle("Launching Emulator");
+                        splash.setTitle("Launching System 7");
                         return attach_script(game_data.emulatorJS);
                       } else {
                         splash.setTitle("Non-system disk or disk error");

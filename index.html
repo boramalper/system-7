@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <title>System 7</title>
   <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, width=device-width, height=device-height">
-  <link rel="manifest" href="manifest.json">
 
   <script>window.archive_setup=[]</script>
 
@@ -40,92 +39,157 @@
   <body class="navia embedded ia-module tiles">
     <!-- Wraps all page content -->
     <div id="wrap">
-
       <!--HTML-->
       <div id="emulate">
         <div id="canvasholder">
           <canvas id="canvas" style="width:100%;height:100%" width="300" height="150"></canvas>
           <div id="gamepadtext"></div>
-          <button id="keyboardBtn" onclick="keyboardBtnClicked()">⌨️</button> <!-- keyboard emoji -->
-          <input id="keyboardInput" type="text">
+          <input id="keyboardInput" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
         </div>
       </div><!--/#emulate-->
 
+      <div id="description">
+        <h1>System 7</h1>
+        <i>A System 7 (aka Mac OS 7) emulator for mobile devices.</i>
 
+        <h2>Usage</h2>
+        <ul>
+          <li>Drag your finger across the emulator screen to move the pointer.
+            <ul>
+              <li>On iOS, the emulator screen acts like a <em>touchpad</em> (<i>i.e.</i>
+              the cursor will move as your finger moves, but won't be located under your finger).</li>
+              <li>On Android, the emulator screen acts like a <em>touchscreen</em> (<i>i.e.</i>
+              the cursor will always be located under your finger).</li>
+            </ul>
+          </li>
+          <li>If your device has 3D Touch, press hard, otherwise keep your finger at least 500 ms on screen
+          for mouse click.</li>
+        </ul>
 
-      <style>
-        body.embedded {
-          background-color:black;
-        }
+        <p>To start using, add this webpage to your Home Screen!</p>
 
-        #emulate {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+        <div id="images" style="display: flex; justify-content: space-around;">
+          <div>
+            <img class="screenshot" src="ios-hs.jpg" />
+            <br>
+            <center><strong>On iOS</strong></center>
+          </div>
+          <div>
+            <img class="screenshot" src="android-hs.png" />
+            <br>
+            <center><strong>On Android</strong></center>
+          </div>
+        </div>
 
-        #canvas {
-          /*cursor: none;*/
-        }
+        <h2>Bugs</h2>
+        <ul>
+          <li>On iOS, keyboard keys are repeated unpredictably a few times.</li>
+          <li>On Android, keyboard doesn't work at all.
+        </ul>
 
-        #keyboardBtn {
-          width: 20%;
-          float: right;
-        }
+        <p>BUGFIXes are welcome! Find us on <a href="https://github.com/boramalper/system-7">GitHub</a>.</p>
 
-        #keyboardInput {
-          visibility: hidden;
-        }
+        <h2>Author</h2>
+        <p>Based on <a href="https://archive.org/details/@jason_scott">Jason Scott</a>'s awesome work on <a href="https://archive.org/details/mac_MacOS_7.0.1_compilation">Internet Archive</a>.</p>
 
-        img.emularity-splash-image {
-          display: none !important;
-        }
-      </style>
-      <script>
-          "use strict";
-
-          if ("standalone" in navigator && !navigator.standalone) {
-            alert("Add to Home Screen to be able to use it!");
-            return;
-          }
-
-          AJS.emulate_setup({"url":"\/stream\/mac_MacOS_7.0.1_compilation?module=pce-macplus&scale=1","identifier":"mac_MacOS_7.0.1_compilation","module":"pce-macplus","scale":"1","screenshot":"\/serve\/mac_MacOS_7.0.1_compilation\/_screenshot.gif"});
-          AJS.emulate();
-
-          // prevIsDeep is to be saved by pce-macplus.js
-          var prevIsDeep = false, isDeep = false;
-
-          Pressure.set("#canvas", {
-            start: function(event){
-              // this is called on force start
-            },
-            end: function(){
-              // this is called on force end
-            },
-            startDeepPress: function(event) {
-              // this is called on "force click" / "deep press", aka once the force is greater than 0.5
-              console.log("deeeeeep");
-              isDeep = true;
-            },
-            endDeepPress: function(){
-              // this is called when the "force click" / "deep press" end
-              console.log("shalloooow");
-              isDeep = false;
-            },
-            change: function(force, event) {
-              // this is called every time there is a change in pressure
-              // force will always be a value from 0 to 1 on mobile and desktop
-            },
-            unsupported: function(){
-              // NOTE: this is only called if the polyfill option is disabled!
-              // this is called once there is a touch on the element and the device or browser does not support Force or 3D touch
-            }
-          });
-
-          function keyboardBtnClicked() {
-            document.getElementById("keyboardInput").focus();
-          }
-      </script>
+        <p>Modified by <a href="http://boramalper.org">Bora M. Alper</a> &lt;bora et boramalper dot org&gt;.</p>
+      </div>
     </div>
+
+    <style>
+      html, body {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      body.embedded {
+        background-color:black;
+      }
+
+      #emulate {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #canvas {
+        /*cursor: none;*/
+      }
+
+      #keyboardInput {
+        width: 20%;
+        float: right;
+      }
+
+      img.emularity-splash-image {
+        display: none !important;
+      }
+
+      #description {
+        display: none;
+        color: white;
+      }
+
+      #images {
+        max-width: calc(100vw - 2 * 8px);
+      }
+
+      .screenshot {
+        height: 40vh;
+      }
+    </style>
+    <script>
+        "use strict";
+
+        // prevIsDeep is to be saved by pce-macplus.js
+        var prevIsDeep = false, isDeep = false;
+
+        function main() {
+          // https://stackoverflow.com/a/34516083/4466589
+          if ("standalone" in navigator && navigator.standalone || window.matchMedia('(display-mode: standalone)').matches) {
+            Pressure.set("#canvas", {
+              start: function(event){
+                // this is called on force start
+              },
+              end: function(){
+                // this is called on force end
+              },
+              startDeepPress: function(event) {
+                // this is called on "force click" / "deep press", aka once the force is greater than 0.5
+                console.log("deeeeeep");
+                isDeep = true;
+              },
+              endDeepPress: function(){
+                // this is called when the "force click" / "deep press" end
+                console.log("shalloooow");
+                isDeep = false;
+              },
+              change: function(force, event) {
+                // this is called every time there is a change in pressure
+                // force will always be a value from 0 to 1 on mobile and desktop
+              },
+              unsupported: function(){
+                // NOTE: this is only called if the polyfill option is disabled!
+                // this is called once there is a touch on the element and the device or browser does not support Force or 3D touch
+              }
+            },
+            {
+              only: "touch",
+              polyfillSpeedUp: 500 // 500 ms
+            });
+
+            AJS.emulate_setup({"url":"\/stream\/mac_MacOS_7.0.1_compilation?module=pce-macplus&scale=1","identifier":"mac_MacOS_7.0.1_compilation","module":"pce-macplus","scale":"1","screenshot":"\/serve\/mac_MacOS_7.0.1_compilation\/_screenshot.gif"});
+            AJS.emulate();
+
+          } else {
+            $("#emulate").css("display", "none");
+            $("#description").css("display", "block");
+            $("html").css("height", "auto");
+            $("body").css("margin", "0px 8px 0px 8px").css("height", "auto").css("width", "auto").css("position", "initial").css("overflow", "initial");
+          }
+        }
+
+        main();
+    </script>
   </body>
 </html>

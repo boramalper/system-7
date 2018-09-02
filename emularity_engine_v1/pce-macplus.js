@@ -6082,6 +6082,7 @@ var SDL = {
                 })
             }
         }
+
         switch (event.type) {
             case "touchstart":
             case "touchmove":
